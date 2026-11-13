@@ -1,1 +1,43 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geneva Bus Board</title>
+
+  <style>
+    body {
+      background: #101820;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #f3bb45;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Geneva Bus Board</h1>
+  <p>My first website!</p>
+  <p id="clock"></p>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent =
+        now.toLocaleTimeString("fr-CH", {
+          timeZone: "Europe/Zurich"
+        });
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>
+
