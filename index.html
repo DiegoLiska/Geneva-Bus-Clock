@@ -1,18 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-  <!-- Open as standalone app on iPad -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Geneva Bus Board">
 
-  <meta name="theme-color" content="#101820">
+  <meta name="theme-color" content="#000000">
 
   <title>Geneva Bus Board</title>
 
@@ -20,48 +16,136 @@
     html, body {
       margin: 0;
       min-height: 100%;
-      background: #101820;
+      background: #000000;
       color: white;
       font-family: Arial, sans-serif;
     }
 
     body {
-      text-align: center;
-      padding: 40px;
+      text-align: left;
+      padding: 100px;
+      padding-right: 130px;
       box-sizing: border-box;
     }
 
-    h1 {
-      color: #f3bb45;
+    .bus-row {
+        display:flex;
+        align-items: center;
+        gap:40px;
     }
 
-    #clock {
-      font-size: 64px;
-      font-weight: bold;
+    .bus-number-5 {
+        color:black;
+        background: lightskyblue;
+        font-size:72px;
+        padding: 2px 15px;
+    }
+
+    .bus-number-8 {
+        color:white;
+        background: #84471C;
+        font-size:72px;
+        padding: 2px 15px;
+    }
+
+
+    .bus-number-11 {
+        color:white;
+        background: #82419E;
+        font-size:72px;
+        padding: 2px;
+        padding-left:1.5px;
+        padding-right:5.1px;
+    letter-spacing: -0.08em;
+    }
+
+    .bus-description {
+        display: flex;
+        flex-direction: column;
+        gap:4px;
+        color: orange;
+        font-size:37px;
+    }
+
+    .minutes {
+        display: flex;
+        flex-direction: column;
+        gap:4px;
+        color: orange;
+        font-size:37px;
+        text-align: right;
+        margin-left: auto;
+    }
+    
+    .stops {
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .bus-row:nth-child(3) {
+    margin-bottom: 50px;
     }
   </style>
 </head>
 
 <body>
-  <h1>Geneva Bus Board</h1>
-  <p>My first website!</p>
-  <p id="clock"></p>
 
-  <script>
-    function updateClock() {
-      const now = new Date();
 
-      document.getElementById("clock").textContent =
-        now.toLocaleTimeString("fr-CH", {
-          timeZone: "Europe/Zurich",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit"
-        });
-    }
+<div class="stops">
 
-    updateClock();
-    setInterval(updateClock, 1000);
-  </script>
-</body>
+<div class="bus-row">
+    <span class="bus-number-5">5</span> 
+    <div class ="bus-description">
+        <span>Thônex  </span> 
+        <span>Thônex  </span>
+    </div>
+    <div class ="minutes">
+        <span id="time-thonex-1"> 3 min</span> 
+        <span id="time-thonex-2">12 min</span> 
+    </div>
+</div>
+
+
+<div class="bus-row">
+    <span class="bus-number-8">8</span> 
+    <div class ="bus-description">
+        <span>Veyrier  </span> 
+        <span>Veyrier  </span>
+    </div>
+    <div class ="minutes">
+        <span id="time-veyrier-1"> 3 min</span> 
+        <span id="time-veyrier-2">12 min</span> 
+    </div>
+</div>
+
+
+<div class="bus-row">
+    <span class="bus-number-11">11</span> 
+    <div class ="bus-description">
+        <span>Eaux-Vives  </span> 
+        <span>Eaux-Vives  </span>
+    </div>
+    <div class ="minutes">
+        <span id="time-eaux-1"> 3 min</span> 
+        <span id="time-eaux-2">12 min</span> 
+    </div>
+</div>
+
+<div class="bus-row">
+    <span class="bus-number-5">5</span> 
+    <div class ="bus-description">
+        <span>Aéroport  </span> 
+        <span>Aéroport  </span>
+    </div>
+    <div class ="minutes">
+        <span id="time-aeroport-1"> 3 min</span> 
+        <span id="time-aeroport-2">12 min</span> 
+    </div>
+</div>
+
+</div>
+
+
 </html>
+
