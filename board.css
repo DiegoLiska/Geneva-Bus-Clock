@@ -1,0 +1,80 @@
+html {
+  background: #101112;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  padding: 3vw;
+  color: #f4f1e9;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+.stops {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  font-size: min(8.25vw, 7.8dvh);
+  gap: 0.54em;
+}
+
+.bus-row {
+  display: flex;
+  align-items: center;
+  gap: 0.44em;
+}
+
+.bus-row:last-child {
+  margin-top: 0.5em;
+}
+
+.bus-number-5, .bus-number-8, .bus-number-11 {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.13em;
+  height: 1.56em;
+  border-radius: 0.12em;
+  font-size: 1.36em;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.bus-number-5  { background: lightskyblue; color: #101112; }
+.bus-number-8  { background: #84471c; color: white; }
+.bus-number-11 { background: #82419e; color: white; letter-spacing: -0.08em; text-indent: -0.08em; }
+
+.bus-description, .minutes {
+  display: grid;
+  grid-template-rows: 1.12em 0.86em;
+  align-items: center;
+  row-gap: 0.14em;
+  white-space: nowrap;
+}
+
+.bus-description {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.minutes {
+  margin-left: auto;
+  min-width: 3.3em;
+  text-align: right;
+  color: #ffc36d;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+}
+
+.bus-description > :last-child, .minutes > :last-child {
+  font-size: 0.74em;
+  font-weight: 400;
+}
+
+.bus-description > :last-child { color: #b2afa8; }
+.minutes > :last-child { color: #dab47f; }
